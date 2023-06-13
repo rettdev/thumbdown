@@ -16,8 +16,10 @@ function OnclickBtnSearch() {
     const videoTitle = document.getElementById('video-title');
     const thumbnailLink = document.getElementById('thumbnail-link');
     const thumbnailImage = document.getElementById('thumbnail-image');
+    const divResult = document.getElementById('result');
 
     if (getLink.value.trim() === "") {
+        errorMessage.textContent = "Escreva um link válido no campo abaixo!";
         errorMessage.style.display = "block";
         return;
     }
@@ -31,12 +33,12 @@ function OnclickBtnSearch() {
 
     const apiKey = 'AIzaSyAQzLR53MRdrAHsbrLe7IL5jvVYm8TAR1A';
     const videoId = extractVideoId(getLink.value);
-    getVideoDetails(videoId, apiKey)
-        .then(snippet => {
-            videoTitle.textContent = snippet.title;
-            thumbnailImage.src = snippet.thumbnails.maxres.url;
-        })
-        .catch(error => {
-            Console.error("Erro ao obter detalhes do vídeo:", error);
-        });
+    getVideoDetails(videoId, apiKey).then(snippet => {
+        videoTitle.textContent = snippet.title;
+        thumbnailImage.src = snippet.thumbnails.maxres.url;
+        getElementById.style.display = "block";
+    }).catch(error => {
+        errorMessage.textContent = "Erro ao obter detalhes do vídeo.";
+        errorMessage.style.display = "block";
+    });
 }

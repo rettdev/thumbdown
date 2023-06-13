@@ -18,11 +18,11 @@
     </header>
     <main>
         <div class="search">
-            <div id="message-error">Escreva um link válido no campo abaixo!</div>
+            <div id="message-error"></div>
             <input type="search" name="input-link" id="input-link" placeholder="Insira o link do vídeo...">
             <div class="btn-search" onclick="OnclickBtnSearch()">Pegar thumbnail!</div>
         </div>
-        <div class="result">
+        <div id="result">
             <h2>Sua thumbnail:</h2>
             <span id="video-title"></span>
             <a id="thumbnail-link" href="" download>
@@ -30,6 +30,12 @@
             </a>
         </div>
     </main>
+    <footer>
+        <div class="container-footer">
+            <p>© 2023 ThumbDown. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <span>Rett</span></p>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

@@ -16,10 +16,11 @@ h2, p{
     text-align: center;
 }
 
-span{
+.header-container span{
     display: flex;
     justify-content: center;
     text-decoration: underline;
+    margin-top: 3vh;
 }
 
 .search{
@@ -59,11 +60,12 @@ span{
     display: none;
 }
 
-.result{
+#result{
     margin-top: 4vh;
+    display: none;
 }
 
-.result #video-title{
+#result #video-title{
     margin-top: 5vh;
 }
 
@@ -75,5 +77,14 @@ span{
 #thumbnail-image{
     padding-top: 4vh;
     width: 100vh;
+}
+
+.container-footer{
+    background-color: greenyellow;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
