@@ -9,32 +9,16 @@
 
 .header{
     display: flex;
-    background-color: greenyellow;
+    background-color: #34495e;
     width: 100%;
     height: 9vh;
-}
-
-.header ul{
-    display: flex;
-    align-items: center;
-    margin-left: 100vh;
-}
-
-.header li{
-    list-style: none;
-}
-
-.btn-header{
-    border: solid 1px;
-    padding: 1vh;
-    margin-left: 10vh;
-    border-radius: 2vh;
 }
 
 .logo{
     font-size: 4.7vh;
     padding-top: 0.6vh;
     padding-left: 2vh;
+    color: #fff;
 }
 
 h2, p{
@@ -43,6 +27,7 @@ h2, p{
 
 .container{
     margin-top: 5vh;
+    color: #333;
 }
 
 .container .link-example{
@@ -50,6 +35,7 @@ h2, p{
     justify-content: center;
     text-decoration: underline;
     margin-top: 3vh;
+    color: #2980b9;
 }
 
 .search{
@@ -71,7 +57,8 @@ h2, p{
     margin: 0 auto;
     width: 20%;
     padding: 1.2vh;
-    background-color: greenyellow;
+    background-color: #2980b9;
+    color: #fff;
     border: 1px solid;
     margin-top: 6vh;
     border-radius: 3vh;
@@ -79,12 +66,7 @@ h2, p{
 
 .btn-search:hover{
     cursor: pointer;
-    background-color: rgb(149, 223, 40);
-}
-
-.btn-header:hover{
-    cursor: pointer;
-    background-color: rgb(149, 223, 40);
+    background-color: #34495e;
 }
 
 #message-error{
@@ -102,6 +84,7 @@ h2, p{
 
 #result #video-title{
     margin-top: 5vh;
+    color: #333;
 }
 
 #thumbnail-link{
@@ -117,11 +100,131 @@ h2, p{
 
 #container-footer{
     margin-top: 10vh;
-    background-color: greenyellow;
+    background-color: #34495e;
     padding: 20px;
     text-align: center;
     bottom: 0;
     width: 100%;
     position: fixed;
+    color: #fff;
 }
 
+#container-footer span{
+    color: #2980b9;
+}
+
+.header ul{
+    display: flex;
+    padding-left: 60vh;
+}
+
+.header li{
+    padding-top: 2.2vh;
+    padding-left: 10vh;
+    list-style: none;
+    font-size: 3vh;
+}
+
+.header a{
+    color: #fff;
+    background-color: #2980b9;
+    text-decoration: none;
+    padding: 0.8vh;
+    border-radius: 2vh;
+}
+
+.header a:hover{
+    background-color: #34495e;
+    border: solid 1px;
+}
+
+/* Ocultar o ícone "x" padrão em navegadores baseados em WebKit */
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+.container-contate {
+    margin-top: 21vh;
+    text-align: center;
+}
+  
+.container-contate h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+  
+.container-contate p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+  
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+  
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+  
+.contact-item span {
+    margin-right: 5px;
+}
+  
+.contact-item a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+  
+.contact-item a:hover {
+    color: #ff0000;
+}
+
+.container-donate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container-donate h3{
+    padding-top: 6vh;
+    text-align: center;
+}
+
+.donate-informations{
+    padding-top: 5vh;
+}
+
+.donation-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.donation-option label {
+    margin-left: 5px;
+}
+  
+.donation-option input[type="text"] {
+    margin-left: 5px;
+    padding-left: 1vh;
+}
+
+#confirm-btn-donate{
+    margin-top: 3vh;
+    border: none;
+    padding: 2vh;
+    border-radius: 2vh;
+    background-color: #2980b9;
+    color: #fff;
+}
