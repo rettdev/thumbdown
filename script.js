@@ -11,6 +11,7 @@ function getVideoDetails(videoId, apiKey) {
 }
 
 function OnclickBtnSearch() {
+    
     const getLink = document.getElementById('input-link');
     const errorMessage = document.getElementById('message-error');
     const videoTitle = document.getElementById('video-title');
@@ -51,6 +52,7 @@ function OnclickBtnSearch() {
     getVideoDetails(videoId, apiKey).then(snippet => {
         videoTitle.textContent = snippet.title;
         thumbnailImage.src = snippet.thumbnails.maxres.url;
+        thumbnailLink.href = thumbnailImage.src;
         divResult.style.display = "block";
         errorMessage.textContent = "Sua thumbanil está disponível, role para baixo e clique na imagem!";
         errorMessage.style.color = "green";
