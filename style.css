@@ -109,8 +109,34 @@ h2, p{
     color: #fff;
 }
 
-#container-footer span{
-    color: #2980b9;
+#container-footer a{
+    color: #fff;
+}
+
+#footer-donate{
+    margin-top: 10vh;
+    background-color: #34495e;
+    padding: 20px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+    color: #fff;
+}
+
+#footer-donate a{
+    color: #fff;
+}
+
+#container-footer-termos{
+    margin-top: 10vh;
+    background-color: #34495e;
+    padding: 20px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+    color: #fff;
 }
 
 .header ul{
@@ -175,11 +201,12 @@ input[type="search"]::-webkit-search-cancel-button {
 }
   
 .contact-item span {
+    color: blueviolet;
     margin-right: 5px;
 }
   
 .contact-item a {
-    color: #333;
+    color: blueviolet;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -220,16 +247,68 @@ input[type="search"]::-webkit-search-cancel-button {
     padding-left: 1vh;
 }
 
-#confirm-btn-donate{
-    margin-top: 3vh;
-    border: none;
-    padding: 2vh;
-    border-radius: 2vh;
-    background-color: #2980b9;
-    color: #fff;
+.donation{
+    margin-top: 5vh;
 }
 
-#confirm-btn-donate:hover{
-    background-color: #34495e;
-    cursor: pointer;
+.material-symbols-outlined{
+    margin-bottom: 2vh;
+    color: green;
+}
+
+.donation span{
+    font-size: 7vh;
+}
+
+#link-pix{
+    display: flex;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    font-size: 4vh;
+    justify-content: center;
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+.chave-pix{
+    margin-top: 3vh;
+}
+
+.chave-pix span{
+    color: blueviolet;
+    text-decoration: underline;
+    font-size: 3vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-termos {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container-termos h1, h2 {
+    color: #333;
+}
+
+.container-termos h2 {
+    margin-top: 30px;
+}
+
+.container-termos p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.title-termos{
+    color: #333;
+    padding-left: 2vh;
+    padding-top: 1vh;
+}
+
+@media (max-width: 480px) {
+    .container-termos {
+        padding: 10px;
+    }
 }

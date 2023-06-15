@@ -8,6 +8,7 @@
     <meta name="author" content="Rett">
     <meta name="language" content="pt-br">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <title>Doação - ThumbDown</title>
 </head>
 <body>
@@ -28,47 +29,27 @@
                 <p>Agradecemos por usar o ThumbDown, uma ferramenta gratuita para obter thumbnails de vídeos do YouTube.</p>
                 <p>Se você encontrar valor e utilidade em nosso serviço, considere fazer uma doação</p>
                 <p>para nos apoiar e nos permitir continuar fornecendo essa ferramenta gratuitamente.</p>
-                
-                <h3>Opções de Doação:</h3>
             </div>
-            <form id="donation-form">
-                <div class="donation-option">
-                  <label>
-                    <input type="radio" name="amount" value="10"> R$ 10
-                  </label>
-                </div>
-                <div class="donation-option">
-                  <label>
-                    <input type="radio" name="amount" value="25"> R$ 25
-                  </label>
-                </div>
-                <div class="donation-option">
-                  <label>
-                    <input type="radio" name="amount" value="50"> R$ 50
-                  </label>
-                </div>
-                <div class="donation-option">
-                  <label>
-                    <input type="radio" name="amount" value="100"> R$ 100
-                  </label>
-                </div>
-                <div class="donation-option">
-                  <label>
-                    <input type="radio" name="amount" value="custom"> Outro valor:
-                    <input type="text" name="amount_custom" placeholder="Digite o valor...">
-                  </label>
-                </div>
-                
-                <button type="submit" id="confirm-btn-donate">Fazer Doação</button>
-              </form>
+            <div class="donation">
+              <span class="material-symbols-outlined">payments</span>
+              <p>Para transferir qualquer valor de doação pela conta</p>
+              <p>do Nubank ou de outros bancos pelo Pix, entre em:</p>
+              <a href="https://nubank.com.br/pagar/lj1r1/G9ND0X3cSC"><span id="link-pix">https://nubank.com.br/pagar/lj1r1/G9ND0X3cSC</span></a>
+              <p>Ou, se preferir, envie a doação para a chave pix:</p>
+              <div class="chave-pix">
+                <span>Chave: lucasmara904@gmail.com</span>
+                <span>Nome: Lucas Marques</span>
+                <span>Instituição: Nubank</span>
+              </div>
+            </div>
         </div>
     </main>
     <footer>
-        <div id="container-footer">
+        <div id="footer-donate">
             <p>© 2023 ThumbDown. Todos os direitos reservados.</p>
             <p>Desenvolvido por <span>Rett</span></p>
+            <a href="termos.html">Termos e serviços</a>
         </div>
     </footer>
-    <script src="donate.js"></script>
 </body>
 </html>
