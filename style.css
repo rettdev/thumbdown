@@ -141,12 +141,12 @@ h2, p{
 
 .header ul{
     display: flex;
-    padding-left: 60vh;
+    justify-content: flex-end;
 }
 
 .header li{
     padding-top: 2.2vh;
-    padding-left: 10vh;
+    padding-left: 15vh;
     list-style: none;
     font-size: 3vh;
 }
@@ -231,22 +231,6 @@ input[type="search"]::-webkit-search-cancel-button {
     padding-top: 5vh;
 }
 
-.donation-option {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.donation-option label {
-    margin-left: 5px;
-}
-  
-.donation-option input[type="text"] {
-    margin-left: 5px;
-    padding-left: 1vh;
-}
-
 .donation{
     margin-top: 5vh;
 }
@@ -307,8 +291,35 @@ input[type="search"]::-webkit-search-cancel-button {
     padding-top: 1vh;
 }
 
-@media (max-width: 480px) {
+@media (max-width:  720px) {
     .container-termos {
         padding: 10px;
+    }
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+      
+    #thumbnail-image {
+        width: 100%;
+        height: auto;
+    }
+
+    #container-footer,
+    #container-footer-termos,
+    #footer-donate,
+    #container-footer{
+        text-align: center;
+        justify-content: center;
+    }
+      
+    .header li {
+        padding-left: 2vh;
+        margin-bottom: 10px;
+    }
+
+    .donate-informations,
+    #link-pix{
+        font-size: 3vh;
     }
 }
