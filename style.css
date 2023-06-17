@@ -10,13 +10,13 @@
 .header{
     display: flex;
     background-color: #34495e;
-    width: 100%;
+    max-width: 100%;
     height: 9vh;
 }
 
 .logo{
-    font-size: 4.7vh;
-    padding-top: 0.6vh;
+    font-size: 3.7vh;
+    padding-top: 1vh;
     padding-left: 2vh;
     color: #fff;
 }
@@ -28,6 +28,7 @@ h2, p{
 .container{
     margin-top: 5vh;
     color: #333;
+    font-size: 2.5vh;
 }
 
 .container .link-example{
@@ -49,6 +50,7 @@ h2, p{
     display: flex;
     margin: 0 auto;
     margin-top: 7vh;
+    font-size: 2vh;
 }
 
 .btn-search{
@@ -98,6 +100,10 @@ h2, p{
     height: 60vh;
 }
 
+footer{
+    font-size: 2.2vh;
+}
+
 #container-footer{
     margin-top: 10vh;
     background-color: #34495e;
@@ -109,11 +115,7 @@ h2, p{
     color: #fff;
 }
 
-#container-footer a{
-    color: #fff;
-}
-
-#footer-donate{
+#container-donate-footer{
     margin-top: 10vh;
     background-color: #34495e;
     padding: 20px;
@@ -121,10 +123,6 @@ h2, p{
     bottom: 0;
     width: 100%;
     position: relative;
-    color: #fff;
-}
-
-#footer-donate a{
     color: #fff;
 }
 
@@ -135,7 +133,13 @@ h2, p{
     text-align: center;
     bottom: 0;
     width: 100%;
-    position: relative;
+    position: static;
+    color: #fff;
+}
+
+#container-donate-footer a,
+#container-footer a,
+#container-footer-termos a{
     color: #fff;
 }
 
@@ -145,10 +149,10 @@ h2, p{
 }
 
 .header li{
-    padding-top: 2.2vh;
+    padding-top: 2.3vh;
     padding-left: 15vh;
     list-style: none;
-    font-size: 3vh;
+    font-size: 2.7vh;
 }
 
 .header a{
@@ -177,12 +181,12 @@ input[type="search"]::-webkit-search-cancel-button {
 }
   
 .container-contate h2 {
-    font-size: 24px;
+    font-size: 4vh;
     margin-bottom: 10px;
 }
   
 .container-contate p {
-    font-size: 16px;
+    font-size: 2.5vh;
     margin-bottom: 10px;
 }
   
@@ -191,6 +195,7 @@ input[type="search"]::-webkit-search-cancel-button {
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    font-size: 2.4vh;
 }
   
 .contact-item {
@@ -220,11 +225,7 @@ input[type="search"]::-webkit-search-cancel-button {
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
-
-.container-donate h3{
-    padding-top: 6vh;
-    text-align: center;
+    font-size: 2.5vh;
 }
 
 .donate-informations{
@@ -241,17 +242,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .donation span{
-    font-size: 7vh;
-}
-
-#link-pix{
-    display: flex;
-    padding-top: 4vh;
-    padding-bottom: 4vh;
-    font-size: 4vh;
-    justify-content: center;
-    color: blueviolet;
-    text-decoration: underline;
+    font-size: 5vh;
 }
 
 .chave-pix{
@@ -261,15 +252,15 @@ input[type="search"]::-webkit-search-cancel-button {
 .chave-pix span{
     color: blueviolet;
     text-decoration: underline;
-    font-size: 3vh;
+    font-size: 2.5vh;
     display: flex;
     flex-direction: column;
 }
 
 .container-termos {
-    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    font-size: 2.5vh;
 }
 
 .container-termos h1, h2 {
@@ -277,7 +268,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .container-termos h2 {
-    margin-top: 30px;
+    margin-top: 4vh;
 }
 
 .container-termos p {
@@ -291,35 +282,61 @@ input[type="search"]::-webkit-search-cancel-button {
     padding-top: 1vh;
 }
 
-@media (max-width:  760px) {
-    .container-termos {
-        padding: 10px;
+@media screen and (max-width: 768px) {
+    .container,
+    .container-contate{
+        font-size: 2vh;
     }
-    .container {
-        width: 90%;
-        margin: 0 auto;
+
+    .container-contate{
+        margin-top: 10vh;
     }
-      
+
+    .container-donate-footer{
+        position: static;
+    }
+
+    .donation{
+        max-width: 300px;
+    }
+
+    #input-link {
+        width: 60%;
+        font-size: 1.8vh;
+    }
+
+    .btn-search {
+        width: 40%;
+        font-size: 1.8vh;
+        padding: 1vh;
+    }
+
     #thumbnail-image {
         width: 100%;
         height: auto;
+        max-height: 50vh;
+        padding-top: 2vh;
     }
 
-    #container-footer,
-    #container-footer-termos,
-    #footer-donate,
-    #container-footer{
-        text-align: center;
-        justify-content: center;
+    .header {
+        flex-direction: column;
+        height: auto;
     }
-      
+
+    .logo {
+        padding-left: 0;
+        margin-bottom: 1vh;
+        text-align: center;
+    }
+
+    .header ul {
+        justify-content: center;
+        padding-top: 0.5vh;
+        margin-bottom: 2vh;
+    }
+
     .header li {
         padding-left: 2vh;
-        margin-bottom: 10px;
-    }
-
-    .donate-informations,
-    #link-pix{
-        font-size: 3vh;
+        font-size: 2.2vh;
     }
 }
