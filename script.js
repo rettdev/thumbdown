@@ -1,5 +1,5 @@
 function extractVideoId(url) {
-    const regex = /(?:youtube\.com\/(?:.*v=|.*\/)|youtu\.be\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/;
+    const regex = /(?:youtube\.com\/(?:.*(?:v|e(?:mbed)?)=|.*\/)|youtu\.be\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})(?=\?|\s|$)/;
     const match = regex.exec(url);
     return match ? match[1] : null;
 }
