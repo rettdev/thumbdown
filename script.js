@@ -1,17 +1,12 @@
 function extractVideoId(url) {
-    const regex = /[?&]v=([^&#]+)/;
+    const regex = /(?:youtube\.com\/(?:.*v=|.*\/)|youtu\.be\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/;
     const match = regex.exec(url);
-    return match ? match[1] : "";
-}
-
-function getVideoDetails(videoId, apiKey) {
-    return fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${apiKey}`)
-        .then(response => response.json())
-        .then(data => data.items[0].snippet);
+    return match ? match[1] : null;
 }
 
 function OnclickBtnSearch() {
-    
+    console.log("Botão de busca clicado");
+
     const getLink = document.getElementById('input-link');
     const errorMessage = document.getElementById('message-error');
     const videoTitle = document.getElementById('video-title');
@@ -23,43 +18,39 @@ function OnclickBtnSearch() {
     const link = getLink.value.trim();
     const isShortsLink = link.includes("youtube.com/shorts");
 
-    if (link === ""){
-        errorMessage.textContent = "Escreva um link válido no campo abaixo!";
-        errorMessage.style.display = "block";
+    if (link === "") {
+        errorMessage.textContent = "Escreva um link válido!";
+        errorMessage.classList.remove('d-none');
         return;
     }
 
-    if (isShortsLink){
+    if (isShortsLink) {
         errorMessage.textContent = "Desculpe, links do YouTube Shorts não são suportados.";
-        errorMessage.style.display = "block";
+        errorMessage.classList.remove('d-none');
         return;
     }
 
-    if(errorMessage.style.display !== "none"){
-        errorMessage.style.display = "none";
+    const videoId = extractVideoId(link);
+    if (!videoId) {
+        errorMessage.textContent = "ID do vídeo não encontrado ou link inválido.";
+        errorMessage.classList.remove('d-none');
+        return;
     }
 
-    if(footer.style.position !== "fixed"){
-        footer.style.position = "fixed";
-    }
+    errorMessage.classList.add('d-none');
+    divResult.classList.remove('d-none'); 
+    divResult.style.display = "block";
 
-    videoTitle.textContent = ""; // Limpar o título anterior, se houver
-    thumbnailLink.href = ""; // Defina a URL correta para o link de download
-    thumbnailImage.src = `https://img.youtube.com/vi/${extractVideoId(getLink.value)}/maxresdefault.jpg`;
+    videoTitle.textContent = `Thumbnail do vídeo:`;
+    const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
-    const apiKey = 'AIzaSyBuVmeIjXAdKMb71cdL4ZHGIa43EhyijtI';
-    const videoId = extractVideoId(getLink.value);
-    getVideoDetails(videoId, apiKey).then(snippet => {
-        videoTitle.textContent = snippet.title;
-        thumbnailImage.src = snippet.thumbnails.maxres.url;
-        thumbnailLink.href = thumbnailImage.src;
-        divResult.style.display = "block";
-        errorMessage.textContent = "Sua thumbanil está disponível, role para baixo e clique na imagem!";
-        errorMessage.style.color = "green";
-        errorMessage.style.display = "block";
+    thumbnailImage.src = thumbnailUrl;
+    thumbnailLink.href = thumbnailUrl;
+    thumbnailLink.setAttribute("download", "thumbnail.jpg");
+
+    if (footer) {
         footer.style.position = "static";
-    }).catch(error => {
-        errorMessage.textContent = "Erro ao obter detalhes do vídeo.";
-        errorMessage.style.display = "block";
-    });
+    }
+
+    console.log("Thumbnail exibida:", thumbnailUrl);
 }
